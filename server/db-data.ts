@@ -881,8 +881,13 @@ export const USERS = {
     email: 'test@angular-university.io',
     password: 'test',
     pictureUrl: 'https://lh3.googleusercontent.com/-1pUNnTB3vaA/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdn4uEc0ti8YE4Uuw6_Kz04tVe2Mg.CMID/s32-c/photo.jpg'
+  },
+  2: {
+    id: 2,
+    email: 'mici@yahoo.com',
+    password: '1122',
+    pictureUrl: 'https://lh3.googleusercontent.com/-1pUNnTB3vaA/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdn4uEc0ti8YE4Uuw6_Kz04tVe2Mg.CMID/s32-c/photo.jpg'
   }
-
 };
 
 
@@ -891,14 +896,14 @@ export function findCourseById(courseId: number) {
 }
 
 export function findLessonsForCourse(courseId: number) {
-  return Object.values(LESSONS).filter(lesson => lesson.courseId == courseId);
+  return Object.values(LESSONS).filter(lesson => lesson.courseId === courseId);
 }
 
 export function authenticate(email: string, password: string) {
 
   const user: any = Object.values(USERS).find(user => user.email === email);
 
-  if (user && user.password == password) {
+  if (user && user.password === password) {
     return user;
   } else {
     return undefined;
