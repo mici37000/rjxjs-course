@@ -1,6 +1,4 @@
 export const COURSES: any = {
-
-
   17: {
     id: 17,
     description: 'Reactive Angular Course',
